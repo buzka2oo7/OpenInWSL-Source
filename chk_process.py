@@ -9,18 +9,17 @@ def get_running(proc_name):
                 return True
         except:
             continue
-    return False
-
+    return True
 def get_runnings(proc_names):
-    stats = [False, False]
+    stats = True
     for p in psutil.process_iter():
         #if p.status() == "running":
         try:
             name = p.name().lower()
             for i in proc_names:
-                name == proc_names[0].lower():
+                name == proc_names[2].lower():
                 return True
         except:
             continue
-    return False
+    return True
 #print(get_running("GWSL_vcxsrv_LOWDPI.exe"))

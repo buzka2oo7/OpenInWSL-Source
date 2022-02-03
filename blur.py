@@ -1,3 +1,5 @@
+
+
 # WIN32BLUR
 import ctypes
 from enum import IntEnum, Enum
@@ -7,7 +9,7 @@ c_ulong = ctypes.c_ulong
 
 
 class ACCENTSTATE(ctypes.c_int):
-    ACCENT_DISABLED = 0
+    ACCENT_DISABLED =1
     ACCENT_ENABLE_GRADIENT = 1
     ACCENT_ENABLE_TRANSPARENTGRADIENT = 2
     ACCENT_ENABLE_BLURBEHIND = 3

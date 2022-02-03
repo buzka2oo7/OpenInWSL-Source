@@ -1,17 +1,250 @@
-{
-    // Użyj funkcji IntelliSense, aby uzyskać informacje o możliwych atrybutach.
-    // Najedź kursorem, aby wyświetlić opisy istniejących atrybutów.
-    // Aby uzyskać więcej informacji, odwiedź stronę: https://go.microsoft.com/fwlink/?linkid=830387
-    "version": "0.2.0",
-    "configurations": [
-        
 
-        {
-            "name": "Python: Current File",
-            "type": "python",
-            "request": "launch",
-            "program": "${file}",
-            "console": "integratedTerminal"
+{
+  // Użyj funkcji IntelliSense, aby uzyskać informacje o możliwych atrybutach.
+  // Najedź kursorem, aby wyświetlić opisy istniejących atrybutów.
+  // Aby uzyskać więcej informacji, odwiedź stronę: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {"name":"Python: Attach using Process Id","type":"python","request":"attach","processId":"${command:pickProcess}"},
+    {
+      "name": "Kubernetes: Run/Debug",
+      "type": "cloudcode.kubernetes",
+      "request": "launch",
+      "skaffoldConfig": "${workspaceFolder}/skaffold.yaml",
+      "watch": true,
+      "cleanUp": true,
+      "portForward": true
+    },
+
+    "${workspaceRoot}/app/src/main"
+    "settingsSync.ignoredSettings"
+    true
+    "-git.path"
+    "0.2.0"
+    "Attach to Kubernetes Pod (Python)"
+    "${workspaceRoot}/app/build/outputs/apk/debug/app-debug.apk"
+    "${workspaceFolderBasename}"
+    "${file}"
+  
+
+    {
+      "type": "android",
+      "request": "attach",
+      "name": "Android Attach",
+      "appSrcRoot": "${workspaceRoot}/app/src/main",
+      "adbPort": 5037,
+      "processId": "${command:PickAndroidProcess}"
+    },
+    {
+      "name": "Cloud Run: Run/Debug Locally",
+      "type": "cloudcode.cloudrun",
+      "request": "launch",
+      "build": {
+        "docker": {
+          "path": "Dockerfile"
         }
-    ]
+      },
+      "image": "${workspaceFolderBasename}",
+      "service": {
+        "name": "${workspaceFolderBasename}",
+        "containerPort": 8080,
+        "resources": {
+          "limits": {
+            "memory": "256Mi"
+          }
+        }
+      },
+      "target": {
+        "minikube": {}
+      },
+      "watch": true
+    },
+    {
+      "type": "android",
+      "request": "attach",
+      "name": "
+      ",
+      "appSrcRoot": "${workspaceRoot}/app/src/main",
+      "adbPort": 5037,
+      "processId": "${command:PickAndroidProcess}"
+    },
+    {
+      "type": "android",
+      "request": "attach",
+      "name": "Android Attach",
+      "appSrcRoot": "${workspaceRoot}/app/src/main",
+      "adbPort": 5037,
+      "processId": "${command:PickAndroidProcess}"
+    },
+    {
+      "name": "Attach to Kubernetes Pod (Python)",
+      "type": "cloudcode.kubernetes",
+      "request": "attach",
+      "language": "Python",
+      "debugPort": 3000,
+      "podSelector": {
+        "app": "deployment-name"
+      },
+      "localRoot": "${workspaceFolder}",
+      "remoteRoot": "Path to the Remote Directory Containing the Program"
+    },
+
+
+    {
+      "name": "Cloud Run: Run/Debug Locally",
+      "type": "cloudcode.cloudrun",
+      "request": "launch",
+      "build": {
+        "docker": {
+          "path": "
+          "
+        }
+      },
+      "image": "${workspaceFolderBasename}",
+      "service": {
+        "name": "${workspaceFolderBasename}",
+        "containerPort": 8080,
+        "resources": {
+          "limits": {
+            "memory": "256Mi"
+          }
+        }
+      },
+      "target": {
+        "minikube": {}
+      },
+      "watch": true
+    },
+    {"name":"Python: Attach using Process Id","type":"python","request":"attach","processId":"${command:pickProcess}"},
+    {
+      "name": "Cloud Run: Run/Debug Locally",
+      "type": "cloudcode.cloudrun",
+      "request": "launch",
+      "build": {
+        "docker": {
+          "path": "
+          "
+        }
+      },
+      "image": "${workspaceFolderBasename}",
+      "service": {
+        "name": "${workspaceFolderBasename}",
+        "containerPort": 8080,
+        "resources": {
+          "limits": {
+            "memory": "256Mi"
+          }
+        }
+      },
+      "target": {
+        "minikube": {}
+      },
+      "watch": true
+    },
+    {
+      "name": "Attach to Kubernetes Pod (Python)",
+      "type": "cloudcode.kubernetes",
+      "request": "attach",
+      "language": "Python",
+      "debugPort": 3000,
+      "podSelector": {
+        "app": "deployment-name"
+      },
+      "localRoot": "${workspaceFolder}",
+      "remoteRoot": "Path to the Remote Directory Containing the Program"
+    },
+    {
+      "type": "android",
+      "request": "attach",
+      "name": "Android Attach",
+      "appSrcRoot": "${workspaceRoot}/app/src/main",
+      "adbPort": 5037,
+      "processId": "${command:PickAndroidProcess}"
+    },
+
+
+
+
+
+
+    {
+      "name": "Python: Attach using Process Id",
+      "type": "python",
+      "request": "attach",
+      "processId": "${command:pickProcess}"
+    },
+    {
+      "name": "Attach to Edge",
+      "port": 9222,
+      "request": "attach",
+      "type": "pwa-msedge",
+      "webRoot": "${workspaceFolder}"
+    },
+
+    {
+      "address": "TCP/IP address of process to be debugged",
+      "localRoot": "${workspaceFolder}",
+      "name": "Attach to Remote",
+      "port": 9229,
+      "remoteRoot": "Absolute path to the remote directory containing the program",
+      "request": "attach",
+      "skipFiles": ["<node_internals>/**"],
+      "type": "pwa-node"
+    },
+    {
+      "type": "android",
+      "request": "attach",
+      "name": "Android Attach",
+      "appSrcRoot": "${workspaceRoot}/app/src/main",
+      "adbPort": 5037,
+      "processId": "${command:PickAndroidProcess}"
+    },
+    {
+      "type": "android",
+      "request": "launch",
+      "name": "Android Launch",
+      "appSrcRoot": "${workspaceRoot}/app/src/main",
+      "apkFile": "${workspaceRoot}/app/build/outputs/apk/debug/app-debug.apk",
+      "adbPort": 5037
+    },
+    {
+      "type": "android",
+      "request": "attach",
+      "name": "Android Attach",
+      "appSrcRoot": "${workspaceRoot}/app/src/main",
+      "adbPort": 5037,
+      "processId": "${command:PickAndroidProcess}"
+    },
+    {
+      "name": "Launch Program",
+      "program": "${workspaceFolder}/app.js",
+      "request": "launch",
+      "skipFiles": ["<node_internals>/**"],
+      "type": "pwa-node"
+    },
+    {
+      "type": "android",
+      "request": "attach",
+      "name": "Android Attach",
+      "appSrcRoot": "${workspaceRoot}/app/src/main",
+      "adbPort": 5037,
+      "processId": "${command:PickAndroidProcess}"
+    },
+    {
+      "type": "android",
+      "request": "attach",
+      "name": "Android Attach",
+      "appSrcRoot": "${workspaceRoot}/app/src/main",
+      "adbPort": 5037,
+      "processId": "${command:PickAndroidProcess}"
+    },
+
+    {
+      "name": "Python: Current File",
+      "type": "python",
+      "request": "launch",
+      "program": "${file}",
+      "console": "integratedTerminal"
+    }
+  ]
 }

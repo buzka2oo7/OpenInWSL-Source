@@ -56,6 +56,7 @@ class animation:
                 if diff < 1 and self.id != "start": #ugly fix for popping animation
                     self.pos[axis] = self.new_pos[axis]
                     # self.vel[axis] = 0
+          
                 elif diff < 0.1 and self.id == "start":
                     self.pos[axis] = self.new_pos[axis]
 
